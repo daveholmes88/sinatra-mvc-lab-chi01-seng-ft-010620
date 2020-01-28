@@ -8,13 +8,9 @@ class PigLatinizer
         pl_array.join(" ")
     end 
 
-    def consonant?(char)
-        !char.match(/[aAeEiIoOuU]/)
-    end 
-
     def piglatin_word(word)
-        vowels = ["a", "e", "i", "o", "u"]
-        if !consonant?(word[0])
+        vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+        if vowels.include?(word[0])
             "#{word}way"
         elsif vowels.include?(word[1])
             letters = word.split("")
